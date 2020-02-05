@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Introduction to DOM</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/be43ae3ae0.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- TODO ITEM TEMPLATE -->
+  <template id="todoItemTemplate">
+    <li data-todo-id="1">
+      <div class="todo-item">
+        <p id="todoItemTitle" class="todo-item-title">Learn Javascript</p>
+
+        <div class="todo-item-actions">
+          <button id="todoItemEdit" class="btn btn-secondary"><i class="fas fa-edit"></i></button>
+          <button id="todoItemRemove" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+        </div>
+      </div>
+    </li>
+  </template>
+
+
+  <main>
+    <section>
+      <div class="container">
+        <h1>Simple TODO App</h1>
+
+        <form id="todoForm" class="add-todo-form">
+          <div class="form-group">
+            <label for="todoTitle">What you need to do?</label>
+            <input type="text" class="form-control" id="todoTitle" aria-describedby="emailHelp"
+              placeholder="Eg: Practice coding javascript">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add to list</button>
+        </form>
+
+        <h2>TODOs:</h2>
+        <ul id="todoList" class="todo-list">
+          <li data-todo-id="1">
+            <div class="todo-item">
+              <p class="todo-item-title">Learn Javascript</p>
+
+              <div class="todo-item-actions">
+                <button class="btn btn-secondary"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
+          </li>
+
+          <li data-todo-id="2">
+            <div class="todo-item">
+              <p class="todo-item-title">Learn JS</p>
+
+              <div class="todo-item-actions">
+                <button class="btn btn-secondary"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>Created by Po with <i class="fas fa-heart"></i></footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

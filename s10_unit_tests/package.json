@@ -1,0 +1,21 @@
+{
+  "name": "opt_unit_tests",
+  "version": "1.0.0",
+  "description": "Demo some simple function of unit tests",
+  "main": "main.js",
+  "scripts": {
+    "test": "nyc mocha *.spec.js"
+  },
+  "keywords": [
+    "mocha",
+    "chai",
+    "unit_test"
+  ],
+  "author": "Hau Nguyen",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.0"
+  }
+}
