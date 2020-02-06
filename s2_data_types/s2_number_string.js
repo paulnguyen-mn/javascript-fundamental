@@ -90,14 +90,8 @@ console.log(
 
 // number has 3 digits
 function sumOfDigits(number) {
-  const donVi = number % 10;
-  const chuc = Math.trunc(number / 10) % 10;
-  const tram = Math.trunc(number / 100);
 
-  return tram + chuc + donVi;
 }
-console.log(sumOfDigits(123));
-console.log(sumOfDigits(246));
 
 
 

@@ -29,12 +29,19 @@ const mark = 7.5;
 console.log('\n--- Infinite and NaN ---');
 console.log('Positive Infinite: ', 1 / 0, Number.POSITIVE_INFINITY);
 console.log('Negative Infinite: ', -1 / 0, Number.NEGATIVE_INFINITY);
-console.log('NaN: ', 1 - 'abc', Number.parseInt('e12'));
+console.log('NaN: ', 1 - 'abc', Number.parseInt('abc'));
+
+
+
 
 // Write number with many zeroes
 console.log('\n--- Number with many zeroes ---');
 console.log('Number: ', 1000000);
 console.log('Number with zeroes: ', 1e6);
+console.log('Number with zeroes: ', 1e-6);
+
+
+
 
 
 // Operators
@@ -55,7 +62,7 @@ console.log('0.1 + 0.2 = ', 0.1 + 0.2, (0.1 + 0.2).toFixed(1));
 
 console.log(
   'Compare 0.3 vs 0.1 + 0.2: '
-  , 0.3 === 0.1 + 0.2
+  , 0.3 == 0.1 + 0.2
   , 0.3.toFixed(1) === (0.1 + 0.2).toFixed(1)
 );
 
@@ -74,7 +81,8 @@ console.log(
   'Parse string to integer',
   Number.parseInt('100') + 23,
   '100' + 23, 23 + '100',
-  '123' - 0
+  '123' - 0,
+  'abc123' - 0,
 );
 console.log(
   'Parse string to float',
@@ -82,22 +90,34 @@ console.log(
   '100.25' + 23
 );
 
-// Viết hàm làm tròn số đầu vào tới số thập phân thứ 3
+
 // Viết hàm random một số bất kỳ có 4 chữ số.
-// Cho 3 số nguyên, xuất ra min, max.
+function randomTo100() {
+  const temp = Math.random() * 100;
+  return Math.trunc(temp);
+}
+console.log(randomTo100());
+
+function randomInRange(a, b) {
+  // check: b must be >= a
+  if (a >= b || a < 0 || b < 0) {
+    console.log('a must be less than b');
+    return -1;
+  }
+
+  const temp = Math.random() * (b - a);
+  return a + Math.trunc(temp);
+}
+console.log(randomInRange(100, 999));
+console.log(randomInRange(1000, 9999));
+
+
+
+
 // Nhập vào số nguyên có 3 chữ số. Tính tổng các chữ số.
-
-
 // number has 3 digits
 function sumOfDigits(number) {
-  const donVi = number % 10;
-  const chuc = Math.trunc(number / 10) % 10;
-  const tram = Math.trunc(number / 100);
-
-  return tram + chuc + donVi;
 }
-console.log(sumOfDigits(123));
-console.log(sumOfDigits(246));
 
 
 
@@ -131,6 +151,10 @@ let hello = 'Rich';
 hello = 'rich'
 console.log(hello);
 
+
+
+
+
 for (const letter of hello) {
   console.log(letter);
 }
@@ -153,42 +177,22 @@ console.log(name.substring(0));
 console.log(name.slice(0, 2));
 
 
-const hello = '   Hello   World    World';
-console.log(hello.split(' '));
+const hello = 'Hello-World-World';
+console.log(hello.split('-'));
 
 // text is spam if includes spam or hack
 function checkSpam(text) {
   let isSpam = false;
 
-  // text is spam if includes spam or hack
-  const includeSpam = text.includes('spam');
-  const includeHack = text.includes('hack');
-  if (includeSpam || includeHack) {
+  const includesSpam = text.includes('spam');
+  const includesHack = text.includes('hack');
+  if (includesSpam || includesHack) {
     isSpam = true;
   }
 
   return isSpam;
 }
-console.log(checkSpam('Khong co hack   dau nha!!! :P'));
-
-
-// ---------------------------
-// checkSpam
-// Write a function checkSpam(text) that returns true if text contains ‘spam’ or ‘hack’, otherwise `false.
-
-// ---------------------------
-// truncate
-// Create a function truncate(text, maxlength) that checks the length of the text and, 
-// if it exceeds maxlength – replaces the end of str with the ellipsis character "…", 
-// to make its length equal to maxlength.
-
-// ---------------------------
-// capitalizeFirstLetter
-// Write a function capitalizeFirstLetter(str) that returns the string str with the uppercased first character
-
-// ---------------------------
-// parameterize
-// Write a JavaScript function to parameterize a string. "Code JS Is Fun" --> "code-js-is-fun"
+console.log(checkSpam('Khong co   dau nha!!! :P'));
 
 
 /**
@@ -201,74 +205,39 @@ console.log(checkSpam('Khong co hack   dau nha!!! :P'));
  */
 
 if (123 == '123') {
-  console.log('Oh troi! Bang luon kia! :P');
+
 }
 
 if (123 === '123') {
-  console.log('Hay ah nha, bang roi do');
+
 }
 
 if (123 !== '123') {
-  console.log('Co in ra nha');
+
 }
 
 
 function xepLoaiHocSinh(diem) {
-  if (diem < 0 || diem > 10) {
-    console.log('Diem ko hop le!!! :P');
-    return;
-  }
-
-  if (diem <= 5) {
-    console.log('Trung Binh');
-  } else if (diem <= 8) {
-    console.log('Kha');
-  } else {
-    console.log('Gioi');
-  }
 }
-xepLoaiHocSinh(1);
-xepLoaiHocSinh(7);
-xepLoaiHocSinh(10);
-xepLoaiHocSinh(15);
 
 
 function printMonth(month) {
+  let result = '';
+  // if (month === 1) result = 'Jan';
+  // else if (month === 2) result = 'Feb';
+  // else result = 'REST';
+
   switch (month) {
-    case 1: console.log('Jan'); break;
-    case 2: console.log('Feb'); break;
-    case 3: console.log('Mar'); break;
-    case 4: console.log('Apr'); break;
-    case 5: console.log('May'); break;
-    default: console.log('Thang ko hop le! :P');
+    case 1:
+      result = 'Jan';
+      break;
+    case 2:
+      result = 'Feb';
+      break;
+    default:
+      result = 'REST';
   }
+
+  return result;
 }
-printMonth(1);
-printMonth(3);
-printMonth(7);
 
-
-// - if...
-// - if...else
-// - if...else if...else
-// classifyStudent()
-
-
-// Switch
-// - switch...case
-// Write a function to print our the month in text. Exp: printMonth(1) --> January, February
-
-
-
-// ```
-// Cho số tiền. Tính xem cần dùng bao nhiêu tờ 10đ, 5đ, 2đ, 1đ. Ví dụ: 128đ = 12 * 10đ + 1 * 5đ + 1 * 2đ + 1 * 1đ.
-// ```
-
-
-// ```
-// Tính tiền taxi biết: 
-//   1km đầu giá 15000
-//   2 -> 5km giá 13500
-//   6 trở lên giá 11000
-// Nếu hơn 120km thì đc giảm 10%
-// ```
