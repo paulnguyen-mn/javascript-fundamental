@@ -23,43 +23,55 @@ const numbers = [];
 const numbers = [3, 5, 7];
 const numberList = [3, 5, 7];
 console.log('Position 0', numbers[0]);
-console.log('Position 0', numbers[1]);
-console.log('Position 0', numbers[2]);
+console.log('Position 1', numbers[1]);
+console.log('Position 2', numbers[2]);
 
 const strings = ['js', 'is', 'cool'];
 const mixed = [1, 'javascipt', [2, 4, 6]];
+mixed[2][0]
 
 
 const numbers = [4, 5, 6];
-// i++ 
-// i = i + 1
+// for i
+let total = 0;
 for (let i = 0; i < numbers.length; i++) {
-  // Do sth with each number
-  console.log(numbers[i]);
+  total = total + numbers[i];
 }
+console.log('Total: ', total);
+
+
+
 
 
 const numbers = [4, 5, 6];
+// for of
+let total = 0;
 for (const number of numbers) {
-  console.log(number);
+  total = total + number;
 }
+console.log('Total: ', total);
 
-// Print even numbers
+
+// total using reduce()
 const numbers = [4, 5, 6];
+const total = numbers.reduce((result, number) => result + number, 0);
+console.log('Total: ', total);
+
+
+
+
+// Find max
+const numbers = [4, 5, 6];
+let max = numbers[0];
 for (const number of numbers) {
-  if (number % 2 === 0) {
-    console.log(number);
+  if (number > max) {
+    max = number;
   }
 }
+console.log('Max: ', max);
 
 // Sum of array
 const numbers = [4, 5, 6];
-let total = 0;
-for (const number of numbers) {
-  // total = total + number;
-  total += number;
-}
-console.log(total);
 
 
 
@@ -106,41 +118,23 @@ const firstNumber = numbers.shift();
 console.log(numbers, firstNumber);
 
 
-function randomNumberMax(max) {
-  const randomNumber = Math.random() * max;
-  console.log(Math.trunc(randomNumber));
-  return Math.trunc(randomNumber);
-}
-randomNumberMax(100);
-
-
-function randomNumber(min, max) {
-  const randomNumber = Math.trunc(
-    Math.random() * (max - min)
-  );
-  console.log(randomNumber + min);
-  return randomNumber + min;
-}
-// randomNumber(100, 1000);
-
-
-
-function generateNumberList(length) {
-  const numberList = [];
-
-  for (let i = 0; i < length; i++) {
-    const number = randomNumber(100, 1000);
-    numberList.push(number);
-  }
-
-  return numberList;
-}
-console.log(generateNumberList(10));
-
+const numbers = [3, 5, 7];
+numbers.splice(0, 0, 2, 4);
+console.log(numbers);
 
 
 // LAB: Sum of two arrays. [1, 2, 3] + [2, 4, 6] = [3, 6, 9];
 // LAB: Generate an array of random numbers
+
+
+
+const a = [1, 2, 3];
+const b = a;
+a.push(4);
+console.log(b);
+
+
+
 
 
 /**
@@ -153,15 +147,22 @@ console.log(generateNumberList(10));
  * - includes()
  */
 
+function doSth() { }
+const doSth = () => { }
+
+
+
 () => { }
 
 const numbers = [5, 7, 9];
 console.log(
   numbers.find(function (number) { return number > 5; })
 );
+
 console.log(
   numbers.find((number) => { return number > 5; })
 );
+
 console.log(
   numbers.find(number => number > 5)
 );
@@ -189,14 +190,15 @@ console.log(numbers.includes(7));
  *
  */
 
+// "code js is fun" --> "code-js-is-fun"
+const text = 'code js is fun';
+const words = text.split(' ');
+const newText = words.join('-');
+console.log(newText);
+
 // ---------------------------
 // parameterize
 // Write a JavaScript function to parameterize a string. "Code JS Is Fun" --> "code-js-is-fun"
-
-const text = 'code js is fun';
-const words = text.split(' ');
-console.log(words);
-console.log(words.join('\u{1f60d}'));
 
 
 /**
@@ -211,53 +213,18 @@ console.log(words.join('\u{1f60d}'));
 
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
-console.log(numbers.filter(number => number % 2 === 0));
-console.log(numbers.filter(number => number % 2 === 1));
-console.log(numbers.filter(number => number > 4));
+const evenNumbers = numbers.filter(number => number % 2 === 0);
+console.log(evenNumbers);
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+const newNumbers = numbers.map(number => number * 2);
+console.log(newNumbers);
+// const evenNumbers = numbers.filter(number => number > 4);
+
 
 // [1, 2, 3] ==> [2, 4, 6]
-console.log([1, 2, 3].map(number => number * 2));
-
-console.log(
-  [1, 2, 3]
-    .map(number => {
-      if (number % 2 === 0) {
-        return number * 2;
-      }
-
-      return number;
-    })
-);
 
 // Sum of array via reduce()
-const sum = [1, 2, 3].reduce(
-  (prevResult, currentNumber) => prevResult + currentNumber,
-  0
-);
-console.log(sum);
-
-const number = 5;
-const isPositive = number > 0 ? true : false;
-
-const max = [1, 2, 3].reduce(
-  (prevResult, currentNumber) => {
-    if (currentNumber > prevResult) {
-      return currentNumber;
-    }
-
-    return prevResult;
-  },
-  Number.NEGATIVE_INFINITY
-);
-console.log(max);
-
-
-const max = [1, 2, 3].reduce(
-  (prevResult, currentNumber) =>
-    currentNumber > prevResult ? currentNumber : prevResult,
-  Number.NEGATIVE_INFINITY
-);
-console.log(max);
 
 
 
