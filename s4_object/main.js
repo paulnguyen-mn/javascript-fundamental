@@ -35,13 +35,17 @@ const person = {
   age: 18,
   isAGirl: false,
   hobbies: ['', ''],
-  sayHello: function () {
+  sayHello: () => {
     console.log('My name is Hau Nguyen');
   }
 };
 console.log(person.name);
 console.log(person.age);
 console.log(person['isAGirl']);
+
+const key = 'isAGirl';
+console.log(person[key]);
+
 person.sayHello();
 person['sayHello']();
 
@@ -74,6 +78,56 @@ sayHello();
 // - Loop through all properties of an object
 
 
+const person = {
+  name: 'Hau Nguyen',
+  age: 18,
+  isAGirl: false,
+};
+
+const keyList = Object.keys(person);
+console.log(keyList);
+for (const key of keyList) {
+  console.log(person[key]);
+}
+
+
+
+
+const a = {
+  value: 10,
+};
+const b = a;
+a.value = 15;
+console.log(b.value);
+
+
+
+const a = {
+  value: 10,
+};
+const b = {
+  key: 10,
+  value: 15,
+};
+const c = {
+  ...a,
+  ...b
+};
+console.log(c.value);
+
+
+
+const a = [1, 2];
+const b = [3, 4];
+const c = [...a, ...b];
+console.log(c);
+
+
+
+
+
+
+
 // Math.
 // Number.
 // Object.
@@ -81,8 +135,6 @@ sayHello();
 // Date.now()
 // String.
 // TODO: Research more about these objects
-
-
 
 
 
@@ -160,6 +212,70 @@ console.log(first, second);
 const [first, ...rest] = [1, 2, 3, 4, 5, 6];
 console.log(rest);
 
+
+
+
+
+
+class Student {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  sayHello() {
+    console.log(this.name, ' - ', this.age);
+  }
+}
+const studentA = new Student('Alice', 18);
+const studentB = new Student('Bob', 20);
+
+studentA.sayHello();
+studentB.sayHello();
+
+
+
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  sayHello() {
+    console.log('Say hello');
+  }
+}
+
+class Teacher extends Person {
+  constructor(name) {
+    super(name);
+  }
+
+  sayHello() {
+    console.log('Say hello - Teacher');
+  }
+
+  teaching() {
+    console.log('Teaching...');
+  }
+}
+
+class Student extends Person {
+  constructor(name) {
+    super(name);
+  }
+
+  sayHello() {
+    console.log('Say hello - Student');
+  }
+}
+
+const teacher = new Teacher('Po');
+teacher.sayHello();
+// teacher.teaching();
+
+const student = new Student('Alice');
+student.sayHello();
 
 
 
