@@ -68,34 +68,7 @@ sayHello();
 
 
 // - Value type and reference type?
-let a = 'abc';
-let b = a;
-a = 'def';
-console.log(b);
-
-
-// ----------
-const a = {
-  name: 'Alice',
-};
-const b = a;
-a.name = 'Bob';
-console.log(b);
-
-
-// Clone object
-const a = {
-  name: 'Alice',
-  age: 17,
-};
-// const b = Object.assign({}, a);
-const b = {
-  age: 18,
-  isAGirl: false,
-  ...a,
-};
-a.name = 'Bob';
-console.log(b);
+// Clone object 
 
 // - What is JS built-in object?
 // - Loop through all properties of an object
@@ -108,18 +81,6 @@ console.log(b);
 // Date.now()
 // String.
 // TODO: Research more about these objects
-
-
-const sum = (...numbers) =>
-  numbers.reduce(
-    (prevResult, currentNumber) => prevResult + currentNumber, 0
-  );
-console.log(sum(1, 2, 3, 4, 5));
-
-
-const a = [1, 2, 3, 4];
-console.log(Math.max(...a));
-
 
 
 
@@ -169,6 +130,7 @@ console.log(first, second);
 
 
 
+// https://www.freecodecamp.org/news/object-oriented-programming-concepts-21bb035f7260/
 
 // - Introduction to OOP
 // - Class properties and method
@@ -180,63 +142,6 @@ console.log(first, second);
 // OOP = Object Oriented Programming
 // Class 
 // Object
-
-class Student {
-  constructor(name, age, gender) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
-  }
-
-  sayHello() {
-    console.log(`Name: ${this.name} - Age: ${this.age} - Gender: ${this.gender}`);
-  }
-}
-
-
-class GoodStudent extends Student {
-  constructor(mark, name, age, isAGirl) {
-    super(name, age, isAGirl);
-    this.isGood = true;
-    this.mark = mark;
-  }
-
-  sayHello() {
-    console.log('Good hello');
-  }
-
-  sayGood() {
-    this.sayHello();
-    super.sayHello();
-    console.log('Good');
-  }
-}
-
-const goodStudent = new GoodStudent(10, 'Po', 20, 'Male');
-const { name, age, gender, mark, isGood } = goodStudent;
-console.log(name, age, gender, isGood, mark);
-// goodStudent.sayHello();
-goodStudent.sayGood();
-
-
-
-const student1 = new Student('Hau', 18, 'NA');
-console.log(student1.name, student1.age, student1.gender);
-student1.sayHello();
-
-const student2 = new Student('Paul', 19, 'NA');
-student2.sayHello();
-
-
-
-
-
-
-// Student: whoYouAre()
-//   - BadStudent: whoYouAre() -> Bad
-//   - GoodStudent: whoYouAre() -> Good
-
-
 
 /**
  *
@@ -257,4 +162,4 @@ console.log(rest);
 
 
 
-  
+
