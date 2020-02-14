@@ -7,64 +7,64 @@ Cho danh sách học sinh như sau:
 ```js
 const studentList = [
   {
-    "id": 1058,
-    "isActive": true,
-    "age": 29,
-    "firstName": "Winifred",
-    "lastName": "Carter",
-    "math": 10,
-    "english": 6,
-    "favoriteFruit": "banana"
+    id: 1058,
+    isActive: true,
+    age: 29,
+    firstName: "Winifred",
+    lastName: "Carter",
+    math: 10,
+    english: 6,
+    favoriteFruit: "banana"
   },
   {
-    "id": 2775,
-    "isActive": false,
-    "age": 24,
-    "firstName": "Glenn",
-    "lastName": "Larson",
-    "math": 9,
-    "english": 10,
-    "favoriteFruit": "apple"
+    id: 2775,
+    isActive: false,
+    age: 24,
+    firstName: "Glenn",
+    lastName: "Larson",
+    math: 9,
+    english: 10,
+    favoriteFruit: "apple"
   },
   {
-    "id": 3072,
-    "isActive": true,
-    "age": 28,
-    "firstName": "Marcy",
-    "lastName": "Bowman",
-    "math": 10,
-    "english": 8,
-    "favoriteFruit": "banana"
+    id: 3072,
+    isActive: true,
+    age: 28,
+    firstName: "Marcy",
+    lastName: "Bowman",
+    math: 10,
+    english: 8,
+    favoriteFruit: "banana"
   },
   {
-    "id": 7626,
-    "isActive": false,
-    "age": 22,
-    "firstName": "Golden",
-    "lastName": "Wilson",
-    "math": 4,
-    "english": 4,
-    "favoriteFruit": "apple"
+    id: 7626,
+    isActive: false,
+    age: 22,
+    firstName: "Golden",
+    lastName: "Wilson",
+    math: 4,
+    english: 4,
+    favoriteFruit: "apple"
   },
   {
-    "id": 9337,
-    "isActive": true,
-    "age": 22,
-    "firstName": "Blevins",
-    "lastName": "Travis",
-    "math": 3,
-    "english": 6,
-    "favoriteFruit": "strawberry"
+    id: 9337,
+    isActive: true,
+    age: 22,
+    firstName: "Blevins",
+    lastName: "Travis",
+    math: 3,
+    english: 6,
+    favoriteFruit: "strawberry"
   },
   {
-    "id": 6218,
-    "isActive": true,
-    "age": 27,
-    "firstName": "Harrell",
-    "lastName": "Day",
-    "math": 4,
-    "english": 6,
-    "favoriteFruit": "apple"
+    id: 6218,
+    isActive: true,
+    age: 27,
+    firstName: "Harrell",
+    lastName: "Day",
+    math: 4,
+    english: 6,
+    favoriteFruit: "apple"
   }
 ]
 ```
