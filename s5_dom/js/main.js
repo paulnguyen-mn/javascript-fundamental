@@ -51,3 +51,48 @@ const todoList = [
   'Really!??'
 ];
 renderTodoList(todoList);
+
+// *********************
+const studentList = [
+  {
+    id: 1058,
+    firstName: "Winifred",
+    lastName: "Carter",
+  },
+  {
+    id: 2775,
+    firstName: "Glenn",
+    lastName: "Larson",
+  },
+  {
+    id: 3072,
+    firstName: "Marcy",
+    lastName: "Bowman",
+  },
+];
+renderStudentList(studentList);
+
+
+function renderStudentList(studentList) {
+  if (!Array.isArray(studentList)) return;
+
+  // Find ul element
+  const studentListElement = document.querySelector('#studentList');
+  if (!studentListElement) return;
+
+  // Loop through studentList array
+  // For each item
+  //  - Create li element
+  //  - Set innerText
+  //  - Append to ul
+  for (const student of studentList) {
+    const liElement = document.createElement('li');
+    const studentInfoString = `${student.id} - ${student.firstName} ${student.lastName}`;
+    liElement.innerText = studentInfoString;
+    studentListElement.appendChild(liElement);
+
+    liElement.addEventListener('click', (e) => {
+      e.target.remove();
+    });
+  }
+}

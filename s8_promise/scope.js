@@ -15,5 +15,3 @@ console.log(count);
   console.log(number);
 }
 console.log(number);
-
-
